@@ -1,5 +1,6 @@
 
-import express from "express"
+import express from "express";
+import healthRouter from "./routes/health.route.js"
 
 
 const app = express()
@@ -12,6 +13,8 @@ app.use(express.json())
 app.get('/',(req,res) =>{
     res.send("EHR is working correctly")
 })
+
+app.use('/api',healthRouter)
 
 app.get('/api/health',(req,res)=>{
     res.send ({
