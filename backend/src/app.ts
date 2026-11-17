@@ -16,14 +16,6 @@ app.get('/',(req,res) =>{
 
 app.use('/api',healthRouter)
 
-app.get('/api/health',(req,res)=>{
-    res.send ({
-        status : 200,
-        message : "EHR Working correctly",
-        timeStamp : new Date().toISOString()
-     })
-})
-
 app.listen(PORT,() =>{
     console.log(`Server is running on port ${PORT}`)
 })
